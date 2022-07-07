@@ -12,7 +12,13 @@ print("------------------- Challenge 1 -------------------")
    # Prompt the user to enter their age.
    # Write conditional statements that print out whether you can drive in your city. 
 
+print("Challenge 1:")
 
+city = input("Enter your city: ")
+age = input("Enter your age: ")
+
+if int(age) >= 16:
+  print("You are allowed to drive in ", city)
 
 
 
@@ -34,7 +40,20 @@ print("------------------- Challenge 2 -------------------")
 
 
 
+num1 = random.randint(0,99)
+num2 = random.randint(0,99)
+num3 = random.randint(0,99)
 
+print (num1)
+print (num2)
+print (num3)
+
+if (num1 > num2) and (num1 > num3):
+  print ("The highest number was", num1)
+elif (num2 > num1) and (num2 > num3):
+  print ("The highest number was", num2)
+elif (num3 > num1) and (num3 > num2):
+  print ("The highest number was", num3)
 
 
 
@@ -62,7 +81,35 @@ print("------------------- Challenge 3 -------------------")
 weather = "rainy"
 
 
+Rainy = 1
+Sunny = 2
+Snowing = 3
 
+randomWeather = random.randint(1,3)
+
+if randomWeather == 1:
+
+  randomTemp = random.randint(40,55)
+
+  print("It's", randomTemp, "degrees outside")
+  print("It's gonna be rainy today")
+  print("Bring an umbrella")
+elif randomWeather == 2:
+
+  randomTemp = random.randint(70,100)
+
+  print("It's", randomTemp, "degrees outside")
+  print("It's gonna be sunny today")
+  print ("Wear your best hawaiian shirt ")
+elif randomWeather == 3:
+
+  randomTemp = random.randint(5,30)
+
+  print("It's", randomTemp, "degrees outside")
+  print("It's gonna be snowing today")
+  print("Wear your warmest coat")
+else:
+  print("detecting weather")
 
 
 
@@ -107,7 +154,24 @@ print("------------------- Challenge 4 -------------------")
 # Make sure to add a statement that accounts for any numbers out of range! 
 
 
+day = input("Enter a day of the week 1-7: ")
 
+if day == str(1):
+  print("It's Monday!")
+elif day == str(2):
+  print("It's Tuesday!")
+elif day == str(3):
+  print("It's Wednesday!")
+elif day == str(4):
+  print("It's Thursday!")
+elif day == str(5):
+  print("It's Friday!")
+elif day == str(6):
+  print("It's Saturday!")
+elif day == str(7):
+  print("It's Sunday!")
+else:
+  print("That's not a day of the week")
 
 
 
