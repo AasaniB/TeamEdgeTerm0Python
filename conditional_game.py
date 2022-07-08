@@ -45,6 +45,7 @@ import random
 
 
 
+
 # -------------------------------------------- 
 
 	# Part 2: Next, we need to randomly select a response from 20 options.
