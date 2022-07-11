@@ -19,28 +19,100 @@ print("------------------- Challenge 1 -------------------")
 
 # **** Challenge 1: Problem 1 ****
 # Write a function called print_message() that prints any message you want.
+messages=["hello world", "Halloween", "Sauce", "Donut", "Bird Person"]
+def print_message(message = random.choice(messages)):
+	print(message)
 
+print_message()
 
 # **** Challenge 1: Problem 2 ****
 # Write a function called print_five_messages() that calls print_message() five times.
+def print_5_messages(message = random.choice(messages)):
+  for x in messages:
+    y = 1
+
+    if y == 1:
+      x = random.choice(messages)
+      y += 1
+      print(x)
+    elif y == 2:
+      x = random.choice(messages)
+      y += 1
+      print(x)
+    elif y == 3:
+      x = random.choice(messages)
+      y += 1
+      print(x)
+    elif y == 4:
+      x = random.choice(messages)
+      y += 1
+      print(x)
+    elif y == 5:
+      x = random.choice(messages)
+      y += 1
+      print(x)
+      break
+    else:
+      print("No")
+
+print_5_messages()
 
 
 # **** Challenge 1: Problem 3 ****
 # Write a function called get_user_input() that asks the user if they'd like to print your message
 # once or five times. Then call one of the two functions above based on what the user decides.
 
+def get_user_input(message = random.choice(messages)):
+  userIn = input("Would you like to print a message once or 5 times? ")
+
+  if userIn == str(1):
+    print_message()
+  elif userIn == str(5):
+    print_5_messages()
+  else:
+    print("You can only print the message once or 5 times")
+
+get_user_input()
+
 
 # **** Challenge 1: Problem 4 ****
 # Write a function called print_greeting() that prints a greeting message to the user.
 
+greetings = ["Howdy", "Hello there", "Wassup", "Hi"]
+def print_greeting(greet = random.choice(greetings)):
+  user = input("Would you like to be greeted? ")
+
+  if user == "yes":
+    print(greet)
+
+  elif user == "no":
+    print("Well I didn't want to greet you anyway")
+
+print_greeting()
+
 
 # **** Challenge 1: Problem 5 ****
 # Write a function called print_closing() that prints a goodbye message to the user.
+goodbye = ["See ya", "Later aligator", "See ya wouldn't want to be ya", "Peace out", "Smell you later"]
+
+def print_closing(bye = random.choice(goodbye)):
+  print("Well its been fun but I'm going to sleep")
+
+  print(bye)
+
+print_closing()
 
 
 # **** Challenge 1: Problem 6 ****
 # Write a function called run() that greets the user, asks them for input, and sends a goodbye message.
 # Remember! Use the functions that you've already made. Don't hardcode anything!
+
+def run(bye = random.choice(goodbye), greet = random.choice(greetings), message = random.choice(messages)):
+  print_greeting()
+  get_user_input()
+  print_closing()
+
+run()
 
 
 
@@ -68,6 +140,24 @@ print("------------------- Challenge 2 -------------------")
 
 
 
+num1 = 1
+num2 = 2
+
+double = num1 * num2
+
+def sum_double():
+  user_input = input("Enter a number: ")
+  input2 = input("Enter another number: ")
+  num1 = int(user_input)
+  num2 = int(input2)
+  sum = num1 + num2 
+  
+  if num1 != num2:
+    print(sum)
+  else:
+    print(sum * 2)
+
+sum_double()
 
 
 
@@ -88,7 +178,22 @@ print("------------------- Challenge 2 -------------------")
 
 
 
+def make_10():
+  is_10 = True
+  user_in = input("Enter a number: ")
+  user_in2 = input("Enter another number: ")
 
+  n1 = int(user_in)
+  n2 = int(user_in2)
+
+  sum = n1 + n2
+
+  if sum == 10 or n1 == 10 or num2 == 10:
+    print(is_10)
+  else:
+    is_10 = False
+    print(is_10)
+make_10()
 
 
 # Make sure to test your code! Write a few function calls to make sure your code works!
