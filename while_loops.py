@@ -1,3 +1,4 @@
+import random
 #********************************************************************
  #                                                                  
  #  Team Edge Mini-project: WHILE LOOP CHALLENGES
@@ -19,13 +20,14 @@
 print("------------------- CHALLENGE 1 : IN YOUR PRIME -------------------")
 
 #Here is a humble while loop in action. We need a variable to hold the counter value.
-num = 0
-while num <= 10:
-    print("example counter--> " + str(num))
-    num += 1
+
+# while num <= 10:
+#     print("example counter--> " + str(num))
+#     num += 1
 
 
 #------------ Helper function, do not mess with this part below ---------------??
+num = 100
 
 def test_prime(n):
   if n==1:
@@ -39,8 +41,13 @@ def test_prime(n):
       if n % x == 0:
         return False
     return True
-
-#-->TODO: Declare a while loop that prints all the prime numbers between 0 and 100, use test_prime() helper function
+test_prime(n)
+# #-->TODO: Declare a while loop that prints all the prime numbers between 0 and 100, use test_prime() helper function
+# while True:
+#   test_prime(100)
+    
+    
+     
 
 
 
@@ -50,6 +57,20 @@ print("------------------- CHALLENGE 2 : FOUND   -------------------")
 items = ["pencil" , "eraser" , "mirror" , "comb" , "spoon" , "key" , "earrings" ,"cat food" , "magazine"]
 
 #-->TODO: Use a while loop to search the contents of a list for the key! If it exists, print "found the key!"
+y = 0
+key_found = False
+while key_found == False:
+  y += 1
+  if items[y] == "key":
+    key_found = True
+    print("found the key")
+  if items[y] != "key":
+    print("The key was not found")
+  
+  
+  
+  
+    
 
 
 
@@ -61,9 +82,14 @@ print("------------------- CHALLENGE 3 : BUGGIN   -------------------")
 #-->TODO: Make me count  2, 4, 6,..., 50
 
 def even_numbers_to_fifty():
-    num = 50
-    while num < 50:
-        print("number: " + str(num))
+    num = 0
+    while num < 51:
+      num +=2
+      print(num)
+      if num == 50:
+        break
+    
+        
 
 even_numbers_to_fifty()
 
@@ -85,13 +111,19 @@ even_numbers_to_fifty()
 
 def pattern():
 
-    index = 0 
-    my_list =[]
+  index = 0 
+  my_list =[]
     
-    while index <= 5:
-        my_list.append(index)
-        print(my_list)
-        index += 1
+  while index <= 5:
+    my_list.append(index)
+    print(my_list)
+    index += 1
+  while index > 1:
+    my_list.pop()
+    print(my_list)
+    index = index -1
+
+      
 
 pattern()
 
@@ -100,11 +132,26 @@ print("------------------- CHALLENGE 4 : MATH QUIZ   -------------------")
 
 
 
-#-->TODO: Make a Math Quiz that asks two random numbers (between 0 and 100 to make it easy).
+#-->TODO: Make a Math Quiz that adds two random numbers (between 0 and 100 to make it easy).
 #         The user enters the answer. If wrong, keep prompting. If correct, say congrats!!
 #         Use this handy boolean to get you started! You will need input()!
 
 is_correct = False
+
+
+while is_correct == False:
+  random_int = random.randint(0,1)
+  random_int2 = random.randint(0,1)
+  get_num = input("Guess the first number: ")
+  get_num2 = input("Guess the first number: ")
+
+  if int(get_num) == random_int or int(get_num2) == random_int2:
+    print("congrats", str(random_int), "and", str(random_int2), "were the right numbers")
+    is_correct = True
+  else:
+    print("That wasn't the correct guess")
+  
+
 
 
 print("------------------- CHALLENGE 5 : WHAT AM I?   -------------------")
@@ -113,17 +160,21 @@ print("------------------- CHALLENGE 5 : WHAT AM I?   -------------------")
 #         You are given two starter functions and a loop to get started! 
 #         Notice how one function calls the other and uses the returned value as the input. This is called Recursion! 
 
-keep_asking = False
+keep_asking = True
 
 def prompt_user():
-    pass
+  print("What do you think I am?")
+  response = input("")
+  return response
+  pass
 
 def response(response):
-    pass
+  print(f"I know you're {response}, but what am I")
+  pass
 
 while keep_asking:
-    #response(prompt_user())
-    pass
+  response(prompt_user())
+  pass
 
 #-->TODO: Challenge! write a secret word to break out of the loop!
 

@@ -26,6 +26,9 @@ for x in range(11):
 
 #-->TODO: Write a loop that prints a happy birthday message for every year you have been alive.
 
+for x in range(1,15):
+    print("Happy Bday!")
+
 
 
 print("------------------- CHALLENGE 2 : ITERATOR ----------------------")
@@ -38,9 +41,12 @@ for x in colors:
     print("The color is: " + x)
 
 #-->TODO: Declare a list with at least 5 animals. You provide the animals.
-animals = []
+animals = ["monkey", "lion", "tiger", "dolphin", "crow"]
 
 #-->TODO: Print all the animals in the array with a for loop. 
+
+for x in animals:
+  print(x)
 
 
 
@@ -58,25 +64,51 @@ else:
 
 #-->TODO: Write a function that counts BACKWARDS from 100 and prints only even numbers
 
+def backwards_counter():
+ for x in range(100,0,-2):
+   print(x)
+backwards_counter()
+
 
 #-->TODO: Write a function that counts BACKWARDS from the given random number and prints only odd numbers
+
+def random_backwards_counter():
+  for y in range(random,0,-1):
+    if y % 2 != 0:
+      print(y)
+    else:
+      print("Number was even")
+
+random_backwards_counter()
+    
+  
 
 
 print("------------------- CHALLENGE 4 : Finder ------------------")
 
 #This code uses the in operator to see if an element exists in a list. It only has to appear once.
-color = input('Type a one word color and see if it is one of my favorite colors! >> ')
-if color in colors:
-    print("Yes, that color is a fav")
-else:
-    print("No, that color is not one of my favorites")
+# color = input('Type a one word color and see if it is one of my favorite colors! >> ')
+# if color in colors:
+#     print("Yes, that color is a fav")
+# else:
+#     print("No, that color is not one of my favorites")
 
 #-->TODO Declare a list of any strings you  want: cities, friends, movies, etc.
+
+foods = ["Cake", "Apple", "Toast", "Noodles", "Steak", ]
 
 
 
 #-->TODO Write function to prompt the user to "Guess" if an element is present in your list. Store their response in a variable. 
 #   --> If their guess is in your list, print CONGRATULATIONS!
+
+# def user_guess():
+#   food = input("Guess your favorite food and see if it's on the list: ")
+#   if food in foods:
+#     print("Yes, your favorite food is on the list")
+#   else:
+#     print("Your favorite food is not on the list")
+# user_guess()
 
 
 #-->TODO Call your function.
@@ -99,5 +131,36 @@ for color in colors:
 
 #-->TODO Write a function that prints every letter in a sentence that a user enters.
 
+def sentence_seperater():
+  sentences = []
+  words = []
+  element = 0
+  sentence_input = input("Write a sentence: ")
+  sentence_split = sentence_input.split(" ")
 
-#-->CHALLENGE: Let the user know which word is the shortest one!
+  sentences.append(sentence_split)
+
+  for word in sentences:
+    print(word)
+    for w in word:
+      print(" - " + w)
+      words.append(w)
+      
+  words.sort()
+  print("The longest word is:", words[-1])
+    
+      
+
+        
+    
+  #-->CHALLENGE: Let the user know which word is the shortest one!
+
+
+sentence_seperater()
+
+  
+
+  
+
+
+
