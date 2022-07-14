@@ -41,7 +41,7 @@ def test_prime(n):
       if n % x == 0:
         return False
     return True
-test_prime(n)
+test_prime(100)
 # #-->TODO: Declare a while loop that prints all the prime numbers between 0 and 100, use test_prime() helper function
 # while True:
 #   test_prime(100)

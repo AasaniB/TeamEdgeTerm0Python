@@ -40,6 +40,16 @@ print(dictionary)
 
 ##################################  MY dictionary ########################### #/
 
+new_dict = {
+    "name": "food shop",
+    "is open_bool": True,
+    "Number of items on menu": 10,
+    "Items on menu": ["Cake", "Apple Sauce", "Chips", "Carrots", "Turkey"],
+    "Is open": ["Open", "Closed"]
+    
+  
+}
+
 
 
 
@@ -52,18 +62,54 @@ print(dictionary)
 print("------------------- CHALLENGE 2 : MODIFY   -------------------")
 
 #-->TODO: Print your dictionary you created above
+print(new_dict)
 
 
 #-->TODO: Update the dictionary you just created  by adding new properties and values, including list elements, in this section.
 
+new_dict["Items on menu"].append("Pizza")
+new_dict['Number of items on menu'] += 1
+new_dict["is open_bool"] = False
+
 
 #-->TODO: Print your dictionary again and observe changes
+print(new_dict)
 
 
 print("------------------- CHALLENGE 3 : MEHTODS   -------------------")
 
 
 #-->TODO: Make a method that will update your dictionary value. It should take in a dictionary and return it modified.
+
+def change_dict():
+  keep_asking = input("Would you like to modify the food shop's menu? Yes or no? ")
+  while keep_asking != "no":
+    if "yes" in keep_asking:
+      ask_user = input("Would you like to open/close the shop or an item to the menu ")
+      if "open shop" in ask_user:
+        print("the shop is now open")
+        new_dict["is open_bool"] = True
+        print(f"is open = {new_dict['is open_bool']}")
+      if "close shop" in ask_user:
+        print("The shop is now closed")
+        new_dict['is open_bool'] = False
+        print(f"is open = {new_dict['is open_bool']}")
+      if "add item" in ask_user:
+        user_item = input("What item would you like to add to the list? ")
+        if user_item not in new_dict:
+          print("adding item to the food shop")
+          new_dict["Items on menu"].append(user_item)
+          new_dict["Number of items on menu"] += 1
+          print(f"Here's the updated menu: New food options: {new_dict['Items on menu']} Number of items on list: {new_dict['Number of items on menu']}")
+        else:
+          print("The item you requested is already on the menu, you should order it!")
+    keep_adding = input("Would you like to change anything else? Yes or no? ")
+    if "No" in keep_adding:
+      print("Ok")
+      break
+      
+        
+change_dict()
 
 
 #-->TODO: Call the method.
